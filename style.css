@@ -837,3 +837,37 @@ margin-bottom: calc(10px + 10  * ((100vw - 320px)/(1920-320)));
     background: #66C9FA;
     color: white;
 }
+
+.ajax_result_population{
+    font-family: 'Roboto';
+    margin-bottom: 10px;
+}
+.ajax_result_weather{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto';
+    margin-bottom: 10px;
+}
+.city_ajax{
+    padding: 0 4px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size:16px;
+}
+.numbers_people{
+    color: #2F5A89;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size:16px;
+
+}
+.weather{
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size:16px;
+    color: #2F5A89;
+
+}
+.ajax_result_wrap{
+    display: none;
+}

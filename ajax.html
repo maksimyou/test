@@ -59,6 +59,15 @@
         <div class="ajax_container">
             <div class="ajax_title">Ассинхрон</div>
             <div class="ajax_result">Тут результат</div>
+
+            <div class="ajax_result_wrap">
+                <div class="ajax_result_population">Население города <span class="city_ajax"></span> равна: <span class="numbers_people"></span>
+                 человек</div>
+                 <div class="ajax_result_weather">Погода города  <span class="city_ajax"></span> равна: <span class="weather"></span>
+                    °C <span class="weather_img"><img src="" alt=""></span>
+                </div>
+            </div>
+
             <input type="text" name="" id="ajax_input_city" placeholder="Введите город">
             <button class="ajax_show" type="submit">Показать</button>
         </div>
@@ -76,22 +85,38 @@
     </div>
     <script src="./script.js"></script>
     <script>
+        let city = document.querySelectorAll('.city_ajax')
+        let btn = document.querySelector('.ajax_show');
+        btn.addEventListener('click',()=>{
+            city.forEach(i=>{
+            i.textContent = document.querySelector('#ajax_input_city').value;
+            })
+            
+          let path = document.querySelector('#ajax_input_city').value;  
+        fetch(`https://api.geotree.ru/search.php?key=RG8teFGLUAmx&term=${path}&level=4`)
+        .then(response =>{return response.json()})
+        .then(Response => {
+            document.querySelector('.numbers_people').textContent = Response[0].population;
+            
 
-        let promise = fetch('https://htmlweb.ru/geo/api.php?city_name=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&json&api_key=32f8ca8b626592e1b0dbceb8606386fa')
-        promise.then(resolve => console.log(resolve))
-     
-        //let xhttp = new XMLHttpRequest();
-        //xhttp.onreadystatechange = function () {
-        //    if (this.readyState == 4 || this.status == 200) {
-        //        myFanction(this.responseText)
-        //    };
-        //};
+        })
 
-        //xhttp.open('GET', 'https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%B2_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_%D1%81_%D0%BD%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC_%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5_100_%D1%82%D1%8B%D1%81%D1%8F%D1%87_%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9');
-        //xhttp.send();
-        //function myFanction(data) {
-        //    console.log(data);
-        //}
+        fetch(`http://api.weatherapi.com/v1/current.json?key=6e22385dfa224a24843211644230603&q=${path}&aqi=no`)
+        .then(response =>{return response.json()})
+        .then(Response => {
+            document.querySelector('.weather').textContent = Response.current.temp_c;
+            document.querySelector('.weather_img img').src = Response.current.condition.icon;
+
+            
+        })
+        document.querySelector('.ajax_result_wrap').style.display = 'block'
+        
+        })
+
+
+
+       
+        
     </script>
  
 </body>
