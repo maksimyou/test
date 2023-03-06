@@ -101,7 +101,7 @@
 
         })
 
-        fetch(`http://api.weatherapi.com/v1/current.json?key=6e22385dfa224a24843211644230603&q=${path}&aqi=no`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=6e22385dfa224a24843211644230603&q=${path}&aqi=no`)
         .then(response =>{return response.json()})
         .then(Response => {
             document.querySelector('.weather').textContent = Response.current.temp_c;
