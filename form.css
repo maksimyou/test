@@ -1,0 +1,48 @@
+.form_cobtainer {
+    max-width: 1120px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.wrap_form{
+    display: flex;
+    flex-direction: column;
+}
+.form_title {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 47px;
+    color: #2F5A89;
+}
+.submit {
+    background-color: #ffffff;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size:   calc(16px + 4  * ((100vw - 320px)/(1920-320)));
+    line-height:  calc(21px + 5  * ((100vw - 320px)/(1920-320)));
+    color: #66C9FA;
+
+    width: calc(276px + 4  * ((100vw - 320px)/(1920-320))); 
+    height: calc(57px + 13  * ((100vw - 320px)/(1920-320)));  
+    border-radius: 5px;
+    border:2px solid #66C9FA; 
+   
+}
+#name_form{
+    padding: 18px 0 18px 22px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size:   calc(16px + 4  * ((100vw - 320px)/(1920-320)));
+    line-height:  calc(21px + 5  * ((100vw - 320px)/(1920-320)));
+    color: #727272;
+    width: calc(280px + 282  * ((100vw - 320px)/(1920-320))); 
+    height: calc(57px + 13  * ((100vw - 320px)/(1920-320))); 
+    border-radius: 5px;
+    border:2px solid #66C9FA;  
+    margin-bottom: calc(10px + 10  * ((100vw - 320px)/(1920-320)));
+}
+
+.submit:hover {
+background: #66C9FA;
+    color: white;
+}

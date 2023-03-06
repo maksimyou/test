@@ -1,0 +1,53 @@
+.ackardeon_container {
+
+    max-width: 1120px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.ackardeon_title {
+    margin-bottom: 23px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: calc(26px + 10  * ((100vw - 320px)/(1920-320)));
+    line-height: calc(34px + 13  * ((100vw - 320px)/(1920-320)));
+    color: #2F5A89;
+}
+.ackardeon_questions_wrap {
+
+    max-width: 676px;
+
+}
+.question {
+    position: relative;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 20px ;
+    line-height: 26px;
+    color: #2F5A89;
+    margin-bottom: 25px;
+}
+.answer {
+ 
+    display: none;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px ;
+    line-height: 21px;
+    color: #2F5A89;
+}
+
+@media (max-width:508px) {
+.question span{
+    position: absolute;
+    top: 15px;
+    right: 0;
+}
+}
+
+.actionn{
+    display: block
+}
+.footer_container_ackardeon{
+
+    padding-top: 40px;
+}
